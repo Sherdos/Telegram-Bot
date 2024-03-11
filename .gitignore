@@ -1,0 +1,4 @@
+conf.py
+env
+__pycache__
+*.pyi
