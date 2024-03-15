@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 from conf import TOKEN
+from utils import get_phrath
 
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
@@ -26,9 +27,7 @@ def get_buttons(message):
 
 @bot.message_handler(content_types='text')
 def get_hello(message):
-    if message.text == 'Hello':
-        bot.reply_to(message, 'HI')
-
+    bot.send_message(message.chat.id, f'{get_phrath()}')
 
 bot.infinity_polling()
     
